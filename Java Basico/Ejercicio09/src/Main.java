@@ -1,13 +1,17 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Vector;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(reverse("Hola Mundo"));
-        ejercicioArray();
-        ejercicioArrayBi();
-        ejercicioVector();
+        //System.out.println(reverse("Hola Mundo"));
+        //ejercicioArray();
+        //ejercicioArrayBi();
+        //ejercicioVector();
+        //ejercicioArrayList();
+        ejercicioSexto();
     }
 
     public static String reverse(String texto) {
@@ -76,5 +80,39 @@ public class Main {
         copia de un array al nuevo para ampliar la nueva capacidad y esto es computacionalmente costoso y en memoria
         para el caso de vectores muy grandes.
          */
+    }
+    public static void ejercicioArrayList(){
+        /*
+         * Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList.
+         * Recorre ambos mostrando únicamente el valor de cada elemento.
+         */
+        ArrayList<String> lista = new ArrayList<>();
+        lista.add("Toyota");
+        lista.add("Hyndai");
+        lista.add("Nissan");
+        lista.add("Suzuki");
+        LinkedList<String> listaEnlazada = new LinkedList<>(lista);
+        for(String elemento : lista){
+            System.out.println("Elemento actual en la lista enlazada:" + elemento);
+        }
+        System.out.println("-------------------------------------------");
+        for (String elemento : listaEnlazada) {
+            System.out.println("Elemento actual en la lista enlazada: " + elemento);
+        }
+    }
+    public static void ejercicioSexto(){
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+        for(int i = 1; i <= 10; i++){
+            lista.add(i);
+        }
+
+        for(int j = 0; j < lista.size(); j++){
+            if(lista.get(j)%2 != 0){
+                System.out.println(lista.get(j));
+            }
+            else{
+                System.out.println("Eliminar par: "+ lista.get(j));
+            }
+        }
     }
 }
