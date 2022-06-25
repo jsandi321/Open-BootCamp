@@ -106,12 +106,12 @@ public class Main {
             lista.add(i);
         }
 
-        for(int j = 0; j < lista.size(); j++){
-            if(lista.get(j)%2 != 0){
-                System.out.println(lista.get(j));
+        for(int j = lista.size() - 1; j >= 0; j--){
+            if(lista.get(j)%2 == 0){
+                lista.remove(j);
             }
             else{
-                System.out.println("Eliminar par: "+ lista.get(j));
+                System.out.println(lista.get(j));
             }
         }
     }
