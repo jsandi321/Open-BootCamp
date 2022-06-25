@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
@@ -11,7 +12,9 @@ public class Main {
         //ejercicioArrayBi();
         //ejercicioVector();
         //ejercicioArrayList();
-        ejercicioSexto();
+        //ejercicioSexto();
+        //DividePorCero(5,0);
+        CopiaFicheros("fileIn.txt", "fileOut.txt");
     }
 
     public static String reverse(String texto) {
@@ -113,6 +116,30 @@ public class Main {
             else{
                 System.out.println(lista.get(j));
             }
+        }
+    }
+    public static void DividePorCero(int numeroA, int numeroB){
+        try{
+            int division = numeroA/numeroB;
+        } catch (ArithmeticException e){
+            System.out.println( "Esto no puede hacerse");
+        } finally{System.out.println("Demo de codigo");}
+
+    }
+    public static void CopiaFicheros(String fileIn, String fileOut){
+        try{
+            InputStream ficheroEntrada = new FileInputStream("fileIn.txt");
+            try {
+                byte []datos = ficheroEntrada.readAllBytes();
+                PrintStream ficheroSalida = new PrintStream("fileOut.txt");
+                ficheroSalida.write(datos);
+                ficheroEntrada.close();
+                ficheroSalida.close();
+            }catch (IOException e){
+                System.out.println("No puedo leerlo: " + e.getMessage());
+            }
+        }catch (FileNotFoundException e){
+            System.out.println("Fichero no encontrado: " + e.getMessage());
         }
     }
 }
