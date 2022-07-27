@@ -68,8 +68,8 @@ class LaptopControllerTest {
                 {
                     "brand": "AlienWare Testing",
                     "OS": "SteamOs",
-                    "price": 650.99
-                    "processor": "i7",
+                    "price": 650.99,
+                    "processor": "i7"
                 }
                 """;
 
@@ -80,7 +80,7 @@ class LaptopControllerTest {
         Laptop result = response.getBody();
 
         assertEquals(1, result.getId());
-        assertEquals("Laptop creada desde Srping Boot Test", result.getBrand());
+        assertEquals("AlienWare Testing", result.getBrand());
 
     }
 

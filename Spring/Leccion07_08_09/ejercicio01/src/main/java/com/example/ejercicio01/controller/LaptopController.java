@@ -57,7 +57,7 @@ public class LaptopController {
      */
     @PostMapping("/api/laptops")
     @ApiOperation("Crear una laptop nueva en base de datos")
-    public Laptop  createBook(@RequestBody Laptop laptop){
+    public Laptop  createLaptop(@RequestBody Laptop laptop){
         //Guarda en base de datos un objeto laptop desde un JSON
         return laptopRepository.save(laptop);
     }
