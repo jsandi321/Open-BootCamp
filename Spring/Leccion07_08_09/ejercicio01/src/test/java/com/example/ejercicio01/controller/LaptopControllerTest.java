@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class LaptopControllerTest {
-    
+
     private TestRestTemplate testRestTemplate;
 
     @Autowired
@@ -66,8 +66,8 @@ class LaptopControllerTest {
 
         String json = """
                 {
-                    "brand": "Libro creado desde Spring Test",
-                    "OS": "Yuval Noah",
+                    "brand": "AlienWare Testing",
+                    "OS": "SteamOs",
                     "price": 650.99
                     "processor": "i7",
                 }
@@ -75,11 +75,11 @@ class LaptopControllerTest {
 
         HttpEntity<String> request = new HttpEntity<>(json,headers);
 
-        ResponseEntity<Laptop> response = testRestTemplate.exchange("/api/books", HttpMethod.POST, request, Laptop.class);
+        ResponseEntity<Laptop> response = testRestTemplate.exchange("/api/laptops", HttpMethod.POST, request, Laptop.class);
 
         Laptop result = response.getBody();
 
-        assertEquals(1L, result.getId());
+        assertEquals(1, result.getId());
         assertEquals("Laptop creada desde Srping Boot Test", result.getBrand());
 
     }
